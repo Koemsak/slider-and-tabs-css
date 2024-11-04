@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* html,
+body {
+    height: 100%;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    font: 16px/1.3 sans-serif;
+    font-family: "Inter", sans-serif;
+}
+
+/*
+PURE RESPONSIVE CSS3 SLIDESHOW GALLERY by Roko C. buljan
+http://stackoverflow.com/a/34696029/383904
+*/
+
+.CSSgal {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    color: #fff;
+
+}
+
+/* SLIDER */
+.CSSgal .slider {
+    height: 100vh;
+    white-space: nowrap;
+    font-size: 0;
+    transition: 0.8s;
+}
+
+.CSSgal .slider div {
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.CSSgal .slider .slider-1 {
+    background: url('https://cdn.pixabay.com/photo/2022/03/27/03/16/muslim-banner-7093980_1280.jpg');
+    background-size: cover;
+}
+
+.CSSgal .slider .slider-2 {
+    background: url('https://cdn.pixabay.com/photo/2016/08/03/09/04/universe-1566161_1280.jpg');
+    background-size: cover;
+}
+
+
+/* SLIDES */
+.CSSgal .slider>* {
+    font-size: 1rem;
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+    height: 100%;
+    width: 100%;
+    background: none 50% no-repeat;
+    background-size: cover;
+}
+
+/* PREV/NEXT, CONTAINERS & ANCHORS */
+
+.CSSgal .prevNext {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 100%;
+    height: 0;
+}
+
+.CSSgal .prevNext>div+div {
+    visibility: hidden;
+}
+
+.CSSgal .prevNext label {
+    color: #fff;
+    padding: 10px;
+    margin: 0 50px;
+    position: absolute;
+    line-height: 60px;
+    font-weight: bolder;
+    /* If you want to place numbers */
+    text-align: center;
+    opacity: 0.8;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    cursor: pointer;
+}
+
+.CSSgal .prevNext label:hover {
+    opacity: 1;
+}
+
+.CSSgal .prevNext label+label {
+    left: auto;
+    right: 0;
+}
+
+/* More slides? Add here more rules */
+
+/* PREV/NEXT CONTAINERS VISIBILITY */
+/* ALL: */
+
+.CSSgal>input[type=radio] {
+    display: none;
+}
+
+.CSSgal>input[type=radio]:checked~.prevNext>* {
+    visibility: hidden;
+}
+
+/* ACTIVE: */
+#s1:checked~.prevNext>*:nth-child(1) {
+    visibility: visible;
+}
+
+#s2:checked~.prevNext>*:nth-child(2) {
+    visibility: visible;
+}
+
+/* SLIDER ANIMATION POSITIONS */
+#s1:checked~.slider {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+}
+
+#s2:checked~.slider {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+
+
+
+/* YOU'RE THE DESIGNER! 
+   ____________________
+   All above was mainly to get it working :)
+   CSSgal CUSTOM STYLES / OVERRIDES HERE: */
+
+.CSSgal .slider .centered {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.CSSgal .slider .centered h3 {
+    font-weight: normal;
+    font-size: 1.2em;
+}
+
+.CSSgal .slider div .centered h2 {
+    text-transform: uppercase;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-weight: 200;
+    letter-spacing: -0.06em;
+    word-spacing: 0.2em;
+    font-size: 3em;
+    font-family: "Playfair Display", serif;
+    letter-spacing: .1em;
+    text-shadow: 1px 1px 1px teal;
+}
+
+.CSSgal .slider div .centered button {
+    margin-top: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.7em;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 20px;
+}
